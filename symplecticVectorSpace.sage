@@ -13,4 +13,15 @@ hSpace = MatrixSpace(GF(q), d, d)
 M1 = (hSpace(0).augment(hSpace(-1)))
 M = M1.stack(hSpace(1).augment(hSpace(0)))
 
-# create a function that evaluates the symplectic inner product of a pair of vectors
+# create a function that evaluates the symplectic inner product of a pair of vectors u and v
+def omega(u,v): return u.inner_product(M*v)
+
+# create a class for elements of the Heisenberg Group on V
+class heisenbergElement:
+  # The first line says that when you create an element of the Heisenberg group, 
+  # you are supposed to choose an element of V and an element of the center
+  def __init__(self, vComponent, zComponent):
+    self.v = vComponent
+    self.z = zComponent
+    
+  # Say how to multiply two elements of the heisenberg group.  This is totally untested.
