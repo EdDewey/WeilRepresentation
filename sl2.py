@@ -5,7 +5,7 @@
 
 
 # work with the field with p elements, modelled as Z/p
-p = 5
+p = 3
 q = p # code for psi assumes q=p!
 F = GF(p, repr='int')
 FMat = MatrixSpace(F, 2, 2)
