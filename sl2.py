@@ -39,8 +39,7 @@ def rhoZ(a):
 	for i in range(0,q):
 		j = a*F(i)    # "F(i)" means i is interpreted in F
 		m[i,j] = 1    # m is now the permutation matrix for f(x) -> f(a^(-1)x) in terms of delta functions
-	# c = sage.rings.integer.Integer(a)/q    # this is the coefficient from the notes, but it cannot be correct
-	c = m.determinant()**(-1)
+	c = kronecker(a,q)
 	m = c*m  
 	return m
 
